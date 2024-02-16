@@ -12,26 +12,29 @@
     <h1>ten</h1>
 </div>
 
+  
 <script>
     var search = document.getElementById("search")
-    var container= document.querySelector(".container")
-    var h1List = document.querySelectorAll("h1")
+    var container = document.querySelector(".container")
    
+    var h1List = container.querySelectorAll("h1")
+   
+
+
     search.addEventListener("keyup",function(){
-        var enteredvalue= event.target.value.toUpperCase()
-       
+        var enteredValue = event.target.value.toUpperCase()
+        for(count =0; count<h1List.length;count=count+1){
+            if(h1List[count].textContent.toUpperCase().indexOf(enteredValue)<0){
 
+                h1List[count].style.display ="none"
 
-        for(count=0;count<h1List.length;count=count+1){
-            if(h1List[count].textContent.toUpperCase().indexOf[enteredvalue]<0)
-            {
-                console.log(h1List[count].textContent.toUpperCase().indexOf[enteredvalue])
-                h1List[count].style.display="none"
             }
             else{
-                
-                h1List[count].style.display="block"
+                h1List[count].style.display ="block"
             }
         }
     })
 </script>
+
+
+
